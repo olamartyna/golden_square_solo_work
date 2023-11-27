@@ -4,8 +4,8 @@
 
 def estimate_reading_time(text):
     text_length = text.count(' ')
-    if text_length >= 200:
+    if text_length > 0:
         minutes =  text_length / 200
         return minutes
     else:
-        return "Reading time is below 1 minute"
+        raise Exception ("Can't estimate reading time of an empty text")
